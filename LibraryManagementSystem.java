@@ -261,8 +261,13 @@ public class LibraryManagementSystem {
             System.out.println("12. Display Only Available Books");
             System.out.println("13. Total Books / Users Count");
             System.out.print("Choose an option: ");
-            int choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            String input = sc.nextLine();
+            int choice;
+            try {
+                choice = Integer.parseInt(input.trim());
+            } catch (NumberFormatException e) {
+                choice = -1;
+            }
 
             switch (choice) {
                 case 1:
